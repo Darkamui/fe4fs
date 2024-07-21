@@ -27,7 +27,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/fe4fs-nextjs:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/fe4fs:latest
 
       - name: Add VPS Host to Known Hosts
         run: |
@@ -44,8 +44,8 @@ jobs:
           chmod 600 private_key
           ssh -i private_key ${VPS_USER}@${VPS_HOST} << 'EOF'
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-            docker pull ${{ secrets.DOCKER_USERNAME }}/fe4fs-nextjs:latest
+            docker pull ${{ secrets.DOCKER_USERNAME }}/fe4fs:latest
             docker stop fe4fs-run || true
             docker rm fe4fs-run || true
-            docker run -d -p 3001:3001 --name fe4fs-run ${{ secrets.DOCKER_USERNAME }}/fe4fs-nextjs:latest
+            docker run -d -p 3001:3001 --name fe4fs-run ${{ secrets.DOCKER_USERNAME }}/fe4fs:latest
           EOF
