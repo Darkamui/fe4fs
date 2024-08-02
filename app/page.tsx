@@ -1,3 +1,4 @@
+import { CardFlip } from "@/components/card-flip";
 import { TextShuffle } from "@/components/text-shuffle";
 import Image from "next/image";
 
@@ -15,6 +16,7 @@ export default function Home() {
           starting new projects
         </p>
       </div>
+      <CardFlip />
     </main>
   );
 }
