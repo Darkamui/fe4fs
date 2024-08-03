@@ -1,5 +1,4 @@
-// components/ClientCodeBlock.tsx
-"use client"; // Mark this component as client-side
+"use client";
 
 import React, { useEffect } from "react";
 import Prism from "prismjs";
@@ -7,7 +6,6 @@ import "prismjs/themes/prism-solarizedLight.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs/plugins/line-highlight/prism-line-highlight.css";
 import "prismjs/plugins/match-braces/prism-match-braces.css";
-import "prismjs/components/prism-jsx.min"; // Import additional languages as needed
 
 if (typeof window !== "undefined") {
   require("prismjs/plugins/line-numbers/prism-line-numbers");
