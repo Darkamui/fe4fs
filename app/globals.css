@@ -64,23 +64,27 @@
     @apply border-border;
   }
   body {
+    animation: none;
     @apply bg-background text-foreground;
   }
 }
 
 /* Text Shuffle Animation */
+.wrapper {
+  margin: auto;
+}
 
 .letter {
-  width: 24px;
+  width: 36px;
   display: inline-block;
   vertical-align: middle;
   position: relative;
   overflow: hidden;
   margin: 0 0;
   font-family: sans-serif;
-  font-size: 24px;
+  font-size: 36px;
   font-weight: 600;
-  line-height: 24px;
+  line-height: 36px;
   text-transform: uppercase;
   color: #000;
 }
@@ -94,7 +98,7 @@
 }
 .letter:nth-child(1):before {
   content: "70824";
-  margin-top: -24px;
+  margin-top: -36px;
   animation-name: letter1;
   animation-duration: 1.44s;
   animation-delay: 0.28s;
@@ -102,10 +106,10 @@
 }
 @keyframes letter1 {
   from {
-    margin-top: -24px;
+    margin-top: -36px;
   }
   to {
-    margin-top: 24px;
+    margin-top: 36px;
   }
 }
 .letter:nth-child(2):before {
@@ -121,7 +125,7 @@
     margin-top: -96px;
   }
   to {
-    margin-top: 24px;
+    margin-top: 36px;
   }
 }
 .letter:nth-child(3):before {
@@ -137,7 +141,7 @@
     margin-top: -192px;
   }
   to {
-    margin-top: 24px;
+    margin-top: 36px;
   }
 }
 .letter:nth-child(4):before {
@@ -153,7 +157,7 @@
     margin-top: -168px;
   }
   to {
-    margin-top: 24px;
+    margin-top: 36px;
   }
 }
 .letter:nth-child(5):before {
@@ -169,6 +173,6 @@
     margin-top: -168px;
   }
   to {
-    margin-top: 24px;
+    margin-top: 36px;
   }
 }

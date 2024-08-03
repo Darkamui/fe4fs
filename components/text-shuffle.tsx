@@ -121,7 +121,7 @@ const cssContent = `
 
 export const TextShuffle = (props: Props) => {
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 items-center justify-center">
       <div className="wrapper">
         <div className="letters">
           <span className="letter">F</span>
@@ -137,6 +137,7 @@ export const TextShuffle = (props: Props) => {
         credit="https://codepen.io/palmdesign/pen/bGpVKxy"
         html={htmlContent}
         css={cssContent}
+        type="css"
       />
     </div>
   );

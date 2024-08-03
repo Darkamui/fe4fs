@@ -1,16 +1,16 @@
+// Modal for displaying Code snippets
 import React from "react";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
 import { Button } from "./ui/button";
 import { CodeTabs } from "./code-tabs";
+import Image from "next/image";
 
 type Props = {
   buttonLabel: string;
@@ -18,6 +18,12 @@ type Props = {
   credit?: string;
   html: string;
   css?: string;
+  type?: "tw" | "css";
+};
+
+const typeToImageMap = {
+  tw: { src: "/tailwind-css.svg", alt: "TailwindCSS" },
+  css: { src: "/css.webp", alt: "CSS" },
 };
 
 export const CodeModal = ({
@@ -26,13 +32,26 @@ export const CodeModal = ({
   credit,
   html,
   css,
+  type,
 }: Props) => {
   return (
     <div>
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant="outline" size="sm">
+          <Button
+            variant="outline"
+            size="sm"
+            className="flex gap-1 items-center justify-center"
+          >
             ({buttonLabel})
+            {type && typeToImageMap[type] && (
+              <Image
+                src={typeToImageMap[type].src}
+                alt={typeToImageMap[type].alt}
+                width={20}
+                height={20}
+              />
+            )}
           </Button>
         </DialogTrigger>
         <DialogContent className="h-full">
