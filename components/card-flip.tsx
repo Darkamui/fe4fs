@@ -36,7 +36,7 @@ const htmlContent = `
     </div>
 `;
 
-export const CardFlip = (props: Props) => {
+export const CardFlip = () => {
   return (
     <div className="flex min-h-[500px]  items-center justify-evenly flex-col ">
       {/* Group the whole Card */}
