@@ -16,9 +16,17 @@ type Props = {
   buttonLabel: string;
   description: string;
   credit?: string;
+  html: string;
+  css?: string;
 };
 
-export const CodeModal = ({ buttonLabel, description, credit }: Props) => {
+export const CodeModal = ({
+  buttonLabel,
+  description,
+  credit,
+  html,
+  css,
+}: Props) => {
   return (
     <div>
       <Dialog>
@@ -27,8 +35,8 @@ export const CodeModal = ({ buttonLabel, description, credit }: Props) => {
             ({buttonLabel})
           </Button>
         </DialogTrigger>
-        <DialogContent>
-          <DialogHeader>
+        <DialogContent className="h-full">
+          <DialogHeader className="flex flex-col justify-center items-center">
             <DialogTitle>{buttonLabel}</DialogTitle>
             <DialogDescription>
               {description}
@@ -38,14 +46,9 @@ export const CodeModal = ({ buttonLabel, description, credit }: Props) => {
               )}
             </DialogDescription>
           </DialogHeader>
-          <div className="">
-            <CodeTabs />
+          <div className="h-full w-full">
+            <CodeTabs html={html} css={css} />
           </div>
-          <DialogFooter>
-            <DialogClose asChild>
-              <Button>Close</Button>
-            </DialogClose>
-          </DialogFooter>
         </DialogContent>
       </Dialog>
     </div>

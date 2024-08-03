@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,30 +11,57 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { LucideClipboard } from "lucide-react";
+import { codeToHtml, codeToTokens, createHighlighter } from "shiki";
+import ClientCodeBlock from "./code-block";
 
-interface Props {}
+interface Props {
+  html: string;
+  css?: string;
+}
 
-export const CodeTabs = (props: Props) => {
+export const CodeTabs = ({ html, css }: Props) => {
+  const copyToCB = async (text: string) => {
+    await navigator.clipboard.writeText(text);
+    return;
+  };
   return (
-    <Tabs defaultValue="html" className="w-full">
-      <TabsList className="grid grid-cols-3">
-        <TabsTrigger value="html">HTML</TabsTrigger>
-        <TabsTrigger value="css">CSS</TabsTrigger>
-        <TabsTrigger value="js">JS/X</TabsTrigger>
+    <Tabs defaultValue="html" className=" h-full">
+      <TabsList className="flex items-center justify-center max-w-fit mx-auto px-4 ">
+        {html && <TabsTrigger value="html">HTML</TabsTrigger>}
+        {css && <TabsTrigger value="css">CSS</TabsTrigger>}
+        {/* <TabsTrigger value="js">JS/X</TabsTrigger> */}
       </TabsList>
       <TabsContent value="html">
         <Card>
-          <CardHeader>
-            <CardTitle>Account</CardTitle>
-            <CardDescription>
-              Make changes to your account here.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <code>blabla</code>
+          <CardContent className="flex flex-1 w-full">
+            <ClientCodeBlock language="html" code={html} />
           </CardContent>
-          <CardFooter>
-            <Button>Copy to clipboard</Button>
+          <CardFooter className="mt-6 flex items-center justify-center">
+            <Button
+              className="flex items-center justify-center gap-2"
+              onClick={() => copyToCB(html)}
+            >
+              <LucideClipboard />
+              Copy to clipboard
+            </Button>
+          </CardFooter>
+        </Card>
+      </TabsContent>
+      <TabsContent value="css">
+        <Card>
+          <CardContent className="flex flex-1 w-full">
+            <ClientCodeBlock language="css" code={css!} />
+          </CardContent>
+
+          <CardFooter className="mt-6 flex items-center justify-center">
+            <Button
+              className="flex items-center justify-center gap-2"
+              onClick={() => copyToCB(css!)}
+            >
+              <LucideClipboard />
+              Copy to clipboard
+            </Button>
           </CardFooter>
         </Card>
       </TabsContent>
@@ -53,9 +81,6 @@ export const CodeTabs = (props: Props) => {
               <Input id="new" type="password" />
             </div>
           </CardContent>
-          <CardFooter>
-            <Button>Save password</Button>
-          </CardFooter>
         </Card>
       </TabsContent>
     </Tabs>
