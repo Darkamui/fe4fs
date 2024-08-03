@@ -10,7 +10,6 @@ import { LucideClipboard } from "lucide-react";
 import Prism from "prismjs";
 import "prismjs/themes/prism-solarizedlight.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
-import "prismjs/plugins/line-highlight/prism-line-highlight.css";
 import "prismjs/plugins/match-braces/prism-match-braces.css";
 
 if (typeof window !== "undefined") {
