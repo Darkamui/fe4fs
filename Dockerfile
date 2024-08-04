@@ -62,11 +62,15 @@ ENV NEXT_TELEMETRY_DISABLED=1
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
+# Copy files from public folder
 COPY --from=build /apps/fe4fs/public ./public
 
 RUN mkdir .next
 RUN chown nextjs:nodejs .next
+
+# If Next config output is 'standalone'
 COPY --from=build --chown=nextjs:nodejs /apps/fe4fs/.next/standalone ./
+
 COPY --from=build --chown=nextjs:nodejs /apps/fe4fs/.next/static ./.next/static
 
 USER nextjs

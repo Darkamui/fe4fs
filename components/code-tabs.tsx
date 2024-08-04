@@ -4,12 +4,12 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import ClientCodeBlock from "./code-block";
+  CardTitle
+} from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import ClientCodeBlock from './code-block';
 
 interface Props {
   html: string;
@@ -25,12 +25,12 @@ export const CodeTabs = ({ html, css }: Props) => {
         {/* <TabsTrigger value="js">JS/X</TabsTrigger> */}
       </TabsList>
       <TabsContent value="html">
-        <Card>
+        <Card className="max-w-screen-xl mx-auto">
           <ClientCodeBlock language="html" code={html} />
         </Card>
       </TabsContent>
       <TabsContent value="css">
-        <Card>
+        <Card className=" max-w-screen-2xl">
           <ClientCodeBlock language="css" code={css!} />
         </Card>
       </TabsContent>
