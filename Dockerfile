@@ -82,7 +82,7 @@ COPY package.json .
 # Copy the production dependencies from the deps stage and also
 # the built application from the build stage into the image.
 COPY --from=deps /apps/fe4fs/node_modules ./node_modules
-COPY --from=build /apps/fe4fs/app ./cv-template
+COPY --from=build /apps/fe4fs/app ./fe4fs
 
 
 # Expose the port that the application listens on.
