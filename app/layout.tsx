@@ -4,13 +4,9 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
 import { Toaster } from '@/components/ui/sonner';
+import { Sidenav } from '@/components/sidenav';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
-
-export const metadata: Metadata = {
-  title: 'FE4FS',
-  description: 'FE4FS'
-};
 
 export default function RootLayout({
   children
@@ -20,9 +16,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn('font-sans', inter.variable)}>
-        <main>{children}</main>
-        <TailwindIndicator />
-        <Toaster />
+        <div className="flex h-screen">
+          <div className="">
+            <Sidenav />
+          </div>
+          <main className="relative flex flex-col flex-1 lg:overflow-y-auto lg:overflow-x-hidden">
+            {children}
+          </main>
+          <Toaster />
+          <TailwindIndicator />
+        </div>
       </body>
     </html>
   );

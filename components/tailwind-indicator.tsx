@@ -12,7 +12,7 @@ export const TailwindIndicator = () => {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <div className="fixed bottom-5 left-5 z-50 flex h-6 w-6 items-center justify-center rounded-full bg-gray-800 p-3 font-mono text-xs text-white hover:cursor-pointer">
+          <div className="fixed bottom-5 right-5 z-50 flex h-6 w-6 items-center justify-center rounded-full bg-gray-800 p-3 font-mono text-xs text-white hover:cursor-pointer">
             <div className="block sm:hidden">xs</div>
             <div className="hidden sm:block md:hidden">sm</div>
             <div className="hidden md:block lg:hidden">md</div>

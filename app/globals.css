@@ -97,7 +97,7 @@
   background-color: #fff;
 }
 .letter:nth-child(1):before {
-  content: "70824";
+  content: '70824';
   margin-top: -36px;
   animation-name: letter1;
   animation-duration: 1.44s;
@@ -113,7 +113,7 @@
   }
 }
 .letter:nth-child(2):before {
-  content: "57862";
+  content: '57862';
   margin-top: -96px;
   animation-name: letter2;
   animation-duration: 2.944s;
@@ -129,7 +129,7 @@
   }
 }
 .letter:nth-child(3):before {
-  content: "GFILK";
+  content: 'GFILK';
   margin-top: -192px;
   animation-name: letter3;
   animation-duration: 0.9333333333s;
@@ -145,7 +145,7 @@
   }
 }
 .letter:nth-child(4):before {
-  content: "30794";
+  content: '30794';
   margin-top: -168px;
   animation-name: letter4;
   animation-duration: 0.805s;
@@ -161,7 +161,7 @@
   }
 }
 .letter:nth-child(5):before {
-  content: "71964";
+  content: '71964';
   margin-top: -168px;
   animation-name: letter5;
   animation-duration: 1.33s;

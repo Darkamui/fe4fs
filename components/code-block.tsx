@@ -31,7 +31,7 @@ const ClientCodeBlock = ({ code, language }: Props) => {
   // Copy code snippet to clipboard
   const copyToCB = async (text: string) => {
     await navigator.clipboard.writeText(text);
-    toast.success('Snippet copied to clipboard!', {});
+    toast.success('Snippet copied to clipboard!');
   };
   return (
     <>
